@@ -1,1 +1,14 @@
 C:\Users\User\Desktop\предметы\прога\Ефремов\КДЗ\sporting goods App\sporting goods App\bin\Debug\sporting goods App.exe.config
+C:\Users\User\Desktop\предметы\прога\Ефремов\КДЗ\sporting goods App\sporting goods App\bin\Debug\sporting goods App.exe
+C:\Users\User\Desktop\предметы\прога\Ефремов\КДЗ\sporting goods App\sporting goods App\bin\Debug\sporting goods App.pdb
+C:\Users\User\Desktop\предметы\прога\Ефремов\КДЗ\sporting goods App\sporting goods App\obj\Debug\sporting goods App.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\предметы\прога\Ефремов\КДЗ\sporting goods App\sporting goods App\obj\Debug\MainWindow.g.cs
+C:\Users\User\Desktop\предметы\прога\Ефремов\КДЗ\sporting goods App\sporting goods App\obj\Debug\App.g.cs
+C:\Users\User\Desktop\предметы\прога\Ефремов\КДЗ\sporting goods App\sporting goods App\obj\Debug\sporting goods App_MarkupCompile.cache
+C:\Users\User\Desktop\предметы\прога\Ефремов\КДЗ\sporting goods App\sporting goods App\obj\Debug\sporting goods App_MarkupCompile.lref
+C:\Users\User\Desktop\предметы\прога\Ефремов\КДЗ\sporting goods App\sporting goods App\obj\Debug\MainWindow.baml
+C:\Users\User\Desktop\предметы\прога\Ефремов\КДЗ\sporting goods App\sporting goods App\obj\Debug\sporting goods App.g.resources
+C:\Users\User\Desktop\предметы\прога\Ефремов\КДЗ\sporting goods App\sporting goods App\obj\Debug\sporting_goods_App.Properties.Resources.resources
+C:\Users\User\Desktop\предметы\прога\Ефремов\КДЗ\sporting goods App\sporting goods App\obj\Debug\sporting goods App.csproj.GenerateResource.Cache
+C:\Users\User\Desktop\предметы\прога\Ефремов\КДЗ\sporting goods App\sporting goods App\obj\Debug\sporting goods App.exe
+C:\Users\User\Desktop\предметы\прога\Ефремов\КДЗ\sporting goods App\sporting goods App\obj\Debug\sporting goods App.pdb

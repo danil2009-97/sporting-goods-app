@@ -88,12 +88,6 @@ namespace sporting_goods_App {
             {
             case 1:
             this.btnUser = ((System.Windows.Controls.Button)(target));
-            
-            #line 22 "..\..\MainWindow.xaml"
-            this.btnUser.Click += new System.Windows.RoutedEventHandler(this.btnUser_Click);
-            
-            #line default
-            #line hidden
             return;
             case 2:
             this.btnAdmin = ((System.Windows.Controls.Button)(target));

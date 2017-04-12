@@ -24,5 +24,10 @@ namespace sporting_goods_App
         {
             InitializeComponent();
         }
+
+        private void btnUser_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
