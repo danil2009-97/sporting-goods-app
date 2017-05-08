@@ -6,16 +6,9 @@ using System.Threading.Tasks;
 
 namespace sporting_goods_App
 {
-    class Shop
+    public class Data
     {
         public List<Product> Products { get; set; }
-
-        public string Address { get; set; }
-
-        public Shop( List<Product>products, string address)
-        {
-            Products = products;
-            Address = address;
-        }
+        public List<Category> Categories { get; set; }
     }
 }

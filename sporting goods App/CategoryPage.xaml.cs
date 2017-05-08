@@ -16,15 +16,22 @@ using System.Windows.Shapes;
 namespace sporting_goods_App
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для CategoryPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class CategoryPage : Page
     {
-        public MainWindow()
+        Repository _repository;
+        public CategoryPage(Repository repository)
         {
             InitializeComponent();
-            windowContent.Content = new MainPage();
+            _repository = repository;
         }
-      
+
+        private void buttonAdd_Click(object sender, RoutedEventArgs e)
+        {
+            Category newCategory = new Category(textBoxName.Text);
+            _repository.AddCategory(newCategory);
+            NavigationService.GoBack();
+        }
     }
 }
