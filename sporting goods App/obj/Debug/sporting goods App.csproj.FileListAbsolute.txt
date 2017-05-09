@@ -18,3 +18,7 @@ C:\Users\User\Desktop\предметы\прога\Ефремов\КДЗ\sporting
 C:\Users\User\Desktop\предметы\прога\Ефремов\КДЗ\sporting goods App\sporting goods App\obj\Debug\sporting goods App.exe
 C:\Users\User\Desktop\предметы\прога\Ефремов\КДЗ\sporting goods App\sporting goods App\obj\Debug\sporting goods App.pdb
 C:\Users\User\Desktop\предметы\прога\Ефремов\КДЗ\sporting goods App\sporting goods App\obj\Debug\sporting goods App.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\предметы\прога\Ефремов\КДЗ\sporting goods App\sporting goods App\obj\Debug\ShopPage.g.cs
+C:\Users\User\Desktop\предметы\прога\Ефремов\КДЗ\sporting goods App\sporting goods App\obj\Debug\ShopPage.baml
+C:\Users\User\Desktop\предметы\прога\Ефремов\КДЗ\sporting goods App\sporting goods App\obj\Debug\AddShopPage.g.cs
+C:\Users\User\Desktop\предметы\прога\Ефремов\КДЗ\sporting goods App\sporting goods App\obj\Debug\AddShopPage.baml

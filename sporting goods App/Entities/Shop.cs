@@ -8,6 +8,14 @@ namespace sporting_goods_App
 {
    public class Shop
     {
+        private string _name;
+
+        public string Name      
+        {
+            get { return _name; }
+            set { _name = value; }
+        }
+
         private List<Category> _categories;
 
         public List<Category> Categories
@@ -33,11 +41,10 @@ namespace sporting_goods_App
         }
         public Shop() { }
 
-        public Shop( List<Product>products, string address, List<Category> categories)
+        public Shop( string address, string name)
         {
-            Products = products;
             Address = address;
-            Categories = categories;
+            Name = name;
         }
     }
 }

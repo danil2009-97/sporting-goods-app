@@ -16,15 +16,22 @@ using System.Windows.Shapes;
 namespace sporting_goods_App
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для AddShopPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AddShopPage : Page
     {
-        public MainWindow()
+        Repository _repository;
+        public AddShopPage(Repository repository)
         {
             InitializeComponent();
-            windowContent.Content = new ShopPage();
+            _repository = repository;
         }
-      
+
+        private void btnShopAdd_Click(object sender, RoutedEventArgs e)
+        {
+            Shop newShop = new Shop(txtAdress.Text,txtName.Text);
+            _repository.AddShop(newShop);
+            NavigationService.GoBack();
+        }
     }
 }

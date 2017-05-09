@@ -14,6 +14,7 @@ namespace sporting_goods_App
 
         public event Action<Category> CategoryAdded;
         public event Action<Product> ProductAdded;
+        public event Action<Shop> ShopAdded;
 
         private List<Product> _products = new List<Product>();
 
@@ -28,16 +29,23 @@ namespace sporting_goods_App
         {
             get { return _categories; }
         }
+        private List<Shop> _shops = new List<Shop>();
+
+        public List<Shop> Shops
+        {
+            get { return _shops; }
+        }
 
         public Repository()
         {
             LoadData();
         }
 
-        public Repository(List<Category> categories, List<Product> products)
+        public Repository(List<Category> categories, List<Product> products, List<Shop> shops)
         {
             _categories = categories;
             _products = products;
+            _shops = shops;
         }
 
         public List<Product> FindProductsOfCategory(Category category)
@@ -62,6 +70,15 @@ namespace sporting_goods_App
 
             _products.Add(product);
             ProductAdded?.Invoke(product);
+            SaveData();
+        }
+
+        public void AddShop(Shop shop)
+        {
+            if (_shops.Exists(s => s.Name == shop.Name))
+                throw new Exception("Такой магазин уже существует!");
+            _shops.Add(shop);
+            ShopAdded?.Invoke(shop);
             SaveData();
         }
 

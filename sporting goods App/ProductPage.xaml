@@ -18,11 +18,11 @@
         </Grid.RowDefinitions>
         <StackPanel HorizontalAlignment="Center" >
             <TextBlock  FontSize="16" VerticalAlignment="Top" >Введите название</TextBlock>
-            <TextBox Name="textBoxName" FontSize="16" VerticalAlignment="Center" Margin="5 0" Width="270" ></TextBox>
+            <TextBox Name="textBoxName" FontSize="16" VerticalAlignment="Center" Margin="5 0" Width="270" TextWrapping="Wrap" ></TextBox>
         </StackPanel>
         <StackPanel HorizontalAlignment="Center" Grid.Row="1" >
             <TextBlock FontSize="16" VerticalAlignment="Top" >Введите описание</TextBlock>
-            <TextBox Name="textBoxDescription" AcceptsReturn="True" Margin="5" FontSize="16" Height="90" Width="270"></TextBox>
+            <TextBox Name="textBoxDescription" AcceptsReturn="True" Margin="5" FontSize="16" Height="90" Width="270" TextWrapping="Wrap"></TextBox>
         </StackPanel>
         <StackPanel Grid.Row="2">
             <TextBlock FontSize="16" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0 2">Выберите категорию</TextBlock>

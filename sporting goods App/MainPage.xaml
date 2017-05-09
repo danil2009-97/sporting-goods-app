@@ -40,7 +40,7 @@
         </StackPanel>
 
         <ListBox Name="categoryList" Grid.Row="1" Margin="5 0" DisplayMemberPath="Name" FontSize="16" SelectionChanged="categoryList_SelectionChanged" />
-        <ListBox Name="productList" Grid.Row="1" Grid.Column="1" DisplayMemberPath="Name" Margin="5 0" FontSize="16" SelectionChanged="productList_SelectionChanged" />
+        <ListBox Name="productList" Grid.Row="1" Grid.Column="1" DisplayMemberPath="Name" Margin="5 0" FontSize="16" SelectionChanged="productList_SelectionChanged"  />
 
         <Button Name="btnCategoryEdit"  Grid.Row="2" Width="200" Margin="7"  Click="btnCategoryEdit_Click" Content="Редактировать Категорию" FontSize="13" IsEnabled="False" />
         <Button Name="btnProductEdit" Grid.Row="2" Grid.Column="1" Width="200" Margin="7" Click="btnProductEdit_Click" Content="Редактировать продукт" FontSize="13" IsEnabled="False" />

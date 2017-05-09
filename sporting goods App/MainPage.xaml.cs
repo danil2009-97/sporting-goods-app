@@ -21,9 +21,10 @@ namespace sporting_goods_App
     public partial class MainPage : Page
     {
         Repository _repository = new Repository();
-        public MainPage()
+        public MainPage(Repository repository)
         {
             InitializeComponent();
+            _repository = repository;
             categoryList.ItemsSource = _repository.Categories;
             _repository.CategoryAdded += c => categoryList.Items.Refresh();
             _repository.ProductAdded += p => categoryList.SelectedIndex = -1;
@@ -55,7 +56,7 @@ namespace sporting_goods_App
 
         private void btnProductRemove_Click(object sender, RoutedEventArgs e)
         {
-            if(categoryList.SelectedIndex != -1)
+            if(productList.SelectedIndex != -1)
             {
                 _repository.RemoveProduct(productList.SelectedItem as Product);
                 productList.ItemsSource = _repository.FindProductsOfCategory(categoryList.SelectedItem as Category);
@@ -72,14 +73,11 @@ namespace sporting_goods_App
                 productList.ItemsSource = null;
         }
 
-        private void productList_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            btnProductRemove.IsEnabled = productList.SelectedIndex != -1;
-        }
+       
 
         private void btnCategoryEdit_Click(object sender, RoutedEventArgs e)
         {
-            btnCategoryEdit.IsEnabled = categoryList.SelectedIndex != -1;
+
         }
 
         private void btnProductEdit_Click(object sender, RoutedEventArgs e)
@@ -104,6 +102,11 @@ namespace sporting_goods_App
                 productList.ItemsSource = _repository.Products;
             else
                 productList.ItemsSource = _repository.FindProducts(text);
+        }
+
+        private void productList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            btnProductRemove.IsEnabled = productList.SelectedIndex != -1;
         }
     }
 }

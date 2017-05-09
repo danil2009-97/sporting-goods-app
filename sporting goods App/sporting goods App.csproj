@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddShopPage.xaml.cs">
+      <DependentUpon>AddShopPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CategoryPage.xaml.cs">
       <DependentUpon>CategoryPage.xaml</DependentUpon>
     </Compile>
@@ -65,6 +68,13 @@
       <DependentUpon>ProductPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Repository.cs" />
+    <Compile Include="ShopPage.xaml.cs">
+      <DependentUpon>ShopPage.xaml</DependentUpon>
+    </Compile>
+    <Page Include="AddShopPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CategoryPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -90,6 +100,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="ProductPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ShopPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

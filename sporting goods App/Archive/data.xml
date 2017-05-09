@@ -22,13 +22,6 @@
         <Name>Рустам</Name>
       </Category>
     </Product>
-    <Product>
-      <Name>Одежда класс</Name>
-      <Description>ыыыыыыыы</Description>
-      <Category>
-        <Name>Одежда</Name>
-      </Category>
-    </Product>
   </Products>
   <Categories>
     <Category>
@@ -36,12 +29,6 @@
     </Category>
     <Category>
       <Name>Кроссовочки</Name>
-    </Category>
-    <Category>
-      <Name>Футболка</Name>
-    </Category>
-    <Category>
-      <Name>Одежда</Name>
     </Category>
   </Categories>
 </Data>
