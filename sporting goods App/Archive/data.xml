@@ -1,34 +1,45 @@
 <?xml version="1.0"?>
-<Data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Products>
-    <Product>
-      <Name>Рустам первый Великий</Name>
-      <Description>Великий Рустам</Description>
+<ArrayOfShop xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Shop>
+    <Name>Адик</Name>
+    <Categories>
       <Category>
-        <Name>Рустам</Name>
+        <Name>Обувь</Name>
+        <Products>
+          <Product>
+            <Name>Нормальная обувь</Name>
+            <Description>фыафыа</Description>
+          </Product>
+          <Product>
+            <Name>Ненормальная обувьsafs</Name>
+            <Description>Мне нравицаasfaasf</Description>
+          </Product>
+          <Product>
+            <Name>Кроссы рибок</Name>
+            <Description>лучшие просто</Description>
+          </Product>
+        </Products>
       </Category>
-    </Product>
-    <Product>
-      <Name>Nike</Name>
-      <Description>Классссс</Description>
       <Category>
-        <Name>Кроссовочки</Name>
+        <Name>Одежда</Name>
+        <Products>
+          <Product>
+            <Name>Одежда 1</Name>
+            <Description>Очень классная</Description>
+          </Product>
+        </Products>
       </Category>
-    </Product>
-    <Product>
-      <Name>РУстам 2 ВсеВеликий</Name>
-      <Description>еееееееееееееееееееееееееееее он мооощьььььь</Description>
-      <Category>
-        <Name>Рустам</Name>
-      </Category>
-    </Product>
-  </Products>
-  <Categories>
-    <Category>
-      <Name>Рустам</Name>
-    </Category>
-    <Category>
-      <Name>Кроссовочки</Name>
-    </Category>
-  </Categories>
-</Data>
+    </Categories>
+    <Address>фыафыа</Address>
+  </Shop>
+  <Shop>
+    <Name>Nike</Name>
+    <Categories />
+    <Address>ыфафыа</Address>
+  </Shop>
+  <Shop>
+    <Name>Reebok</Name>
+    <Categories />
+    <Address>ыфафаф</Address>
+  </Shop>
+</ArrayOfShop>

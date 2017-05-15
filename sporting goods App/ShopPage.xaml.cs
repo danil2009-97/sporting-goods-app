@@ -23,14 +23,25 @@ namespace sporting_goods_App
         Repository _repository = new Repository();
         public ShopPage()
         {
-            InitializeComponent();
-            shopList.ItemsSource = _repository.Shops;
-            _repository.CategoryAdded += c => shopList.Items.Refresh();
+                InitializeComponent();
+                shopList.ItemsSource = _repository.Shops;
+                _repository.ShopAdded += p => shopList.Items.Refresh();
         }
 
         private void shopList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            btnShopRemove.IsEnabled = shopList.SelectedIndex != -1;
+            btnCatalog.IsEnabled = shopList.SelectedIndex != -1;
 
+            if (shopList.SelectedIndex != -1)
+            {
+                Shop selected = shopList.SelectedItem as Shop;
+                txtName.Text = selected.Name;
+                txtAddress.Text = selected.Address;
+                shopBlock.Visibility = Visibility.Visible;
+            }
+            else
+                shopBlock.Visibility = Visibility.Hidden;
         }
 
         private void btnShopAdd_Click(object sender, RoutedEventArgs e)
@@ -40,22 +51,31 @@ namespace sporting_goods_App
 
         private void btnShopRemove_Click(object sender, RoutedEventArgs e)
         {
+            if (shopList.SelectedIndex != -1)
+            {
+                if (MessageBox.Show("Уверены?", "Удаление", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
+                    return;
 
+                _repository.RemoveShop(shopList.SelectedItem as Shop);
+                shopList.Items.Refresh();
+            }
         }
 
         private void txtShopFound_TextChanged(object sender, TextChangedEventArgs e)
         {
+            string text = txtShopFound.Text;
 
+            if (text == "")
+                shopList.ItemsSource = _repository.Shops;
+            else
+                shopList.ItemsSource = _repository.FindShops(text);
         }
 
         private void btnCatalog_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new MainPage(_repository));
+            if (shopList.SelectedIndex != -1)
+                NavigationService.Navigate(new MainPage(_repository, shopList.SelectedItem as Shop));
         }
 
-        private void addressList_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
     }
 }

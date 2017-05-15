@@ -23,7 +23,7 @@ namespace sporting_goods_App
         public MainWindow()
         {
             InitializeComponent();
-            windowContent.Content = new ShopPage();
+            windowContent.Content = new LoginPage();
         }
       
     }

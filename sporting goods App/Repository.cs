@@ -10,25 +10,13 @@ namespace sporting_goods_App
 {
     public class Repository
     {
-        private const string _xmlFileName = "../../Archive/data.xml";
+        Logger _logger = new Logger();
+        private const string _xmlFileName = "../../Archive/Data.xml";
 
         public event Action<Category> CategoryAdded;
         public event Action<Product> ProductAdded;
         public event Action<Shop> ShopAdded;
 
-        private List<Product> _products = new List<Product>();
-
-        public List<Product> Products
-        {
-            get { return _products; }
-        }
-
-        private List<Category> _categories = new List<Category>();
-
-        public List<Category> Categories
-        {
-            get { return _categories; }
-        }
         private List<Shop> _shops = new List<Shop>();
 
         public List<Shop> Shops
@@ -41,35 +29,47 @@ namespace sporting_goods_App
             LoadData();
         }
 
-        public Repository(List<Category> categories, List<Product> products, List<Shop> shops)
+        public Repository(List<Shop> shops)
         {
-            _categories = categories;
-            _products = products;
             _shops = shops;
         }
 
-        public List<Product> FindProductsOfCategory(Category category)
+        public void AddCategory(Category category, Shop shop)
         {
-            return Products.FindAll(p => p.Category.Name == category.Name);
-        }
-
-        public void AddCategory(Category category)
-        {
-            if (_categories.Exists(c => c.Name == category.Name))
+            if (shop.Categories.Exists(c => c.Name == category.Name))
                 throw new Exception("Такая категория уже существует!");
 
-            _categories.Add(category);
+            shop.Categories.Add(category);
             CategoryAdded?.Invoke(category);
+            _logger.Log($"Добавлена новая категория {category.Name}");
             SaveData();
         }
 
-        public void AddProduct(Product product)
+        public void EditCategory(Category category, string newName)
         {
-            if (_products.Exists(p => p.Name == product.Name))
+            category.Name = newName;
+            CategoryAdded?.Invoke(category);
+            _logger.Log($"Внесены изменения в категорию {category.Name}");
+            SaveData();
+        }
+
+        public void EditProduct(Product product, string newName, string newDescription)
+        {
+            product.Name = newName;
+            product.Description = newDescription;
+            ProductAdded?.Invoke(product);
+            _logger.Log($"Внесены изменения в продукт {product.Name}");
+            SaveData();
+        }
+
+        public void AddProduct(Product product, Category category)
+        {
+            if (category.Products.Exists(p => p.Name == product.Name))
                 throw new Exception("Такой продукт уже существует!");
 
-            _products.Add(product);
+            category.Products.Add(product);
             ProductAdded?.Invoke(product);
+            _logger.Log($"Добавлен новый продукт {product.Name}");
             SaveData();
         }
 
@@ -82,26 +82,39 @@ namespace sporting_goods_App
             SaveData();
         }
 
-        public List<Category> FindCategories(string input)
+        public List<Category> FindCategories(Shop shop, string input)
         {
-            return Categories.FindAll(c => c.Name == input);
+            return shop.Categories.FindAll(c => c.Name.ToLower().Contains(input.ToLower()));
         }
 
-        public List<Product> FindProducts(string input)
+        public List<Product> FindProducts(Category category, string input)
         {
-            return Products.FindAll(p => p.Name == input);
+            return category.Products.FindAll(p => p.Name.ToLower().Contains(input.ToLower()));
         }
 
-        public void RemoveCategory(Category category)
+        public List<Shop> FindShops(string input)
         {
-            _products.RemoveAll(p => p.Category.Name == category.Name);
-            _categories.Remove(category);
+            return _shops.FindAll(s => s.Name.ToLower().Contains(input.ToLower()));
+        }
+
+        public void RemoveCategory(Category category, Shop shop)
+        {
+            shop.Categories.Remove(category);
+            _logger.Log($"Удалена категория {category.Name} ");
             SaveData();
         }
 
-        public void RemoveProduct(Product product)
+        public void RemoveProduct(Product product, Category category)
         {
-            _products.Remove(product);
+            category.Products.Remove(product);
+            _logger.Log($"Удален продукт {product.Name}");
+            SaveData();
+        }
+
+        public void RemoveShop(Shop shop)
+        {
+            _shops.Remove(shop);
+            _logger.Log($"Удален магазин {shop.Name}");
             SaveData();
         }
 
@@ -110,14 +123,8 @@ namespace sporting_goods_App
             File.Delete(_xmlFileName);
             using (FileStream fs = new FileStream(_xmlFileName, FileMode.OpenOrCreate))
             {
-                Data d = new Data
-                {
-                    Products = this.Products,
-                    Categories =this.Categories
-                };
-
-                XmlSerializer serializer = new XmlSerializer(typeof(Data));
-                serializer.Serialize(fs, d);
+                XmlSerializer serializer = new XmlSerializer(typeof(List<Shop>));
+                serializer.Serialize(fs, Shops);
             }
         }
 
@@ -127,10 +134,8 @@ namespace sporting_goods_App
             {
                 using (FileStream fs = new FileStream(_xmlFileName, FileMode.Open))
                 {
-                    XmlSerializer serializer = new XmlSerializer(typeof(Data));
-                    Data d = (Data)serializer.Deserialize(fs);
-                    _products = d.Products;
-                    _categories = d.Categories;
+                    XmlSerializer serializer = new XmlSerializer(typeof(List<Shop>));
+                    _shops = (List<Shop>)serializer.Deserialize(fs);
                 }
             }
         }

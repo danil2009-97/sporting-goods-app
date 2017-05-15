@@ -23,6 +23,6 @@
         <TextBox Name="txtName" Grid.Column="1" FontSize="16" Width="200" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0" TextWrapping="Wrap" ></TextBox>
         <TextBlock Grid.Row="1" HorizontalAlignment="Right" Margin="10 0" VerticalAlignment="Center" FontSize="16">Введите адрес:</TextBlock>
         <TextBox Name="txtAdress" Grid.Column="1" Grid.Row="1" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10 0" Width="200" Height="120" TextWrapping="Wrap"></TextBox>
-        <Button Name="btnShopAdd" Grid.Row="2" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" Click="btnShopAdd_Click">Добавить продукт</Button>
+        <Button Name="btnShopAdd" Grid.Row="2" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" Click="btnShopAdd_Click">Добавить магазин</Button>
     </Grid>
 </Page>

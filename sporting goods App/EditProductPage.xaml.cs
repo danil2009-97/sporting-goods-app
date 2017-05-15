@@ -16,21 +16,28 @@ using System.Windows.Shapes;
 namespace sporting_goods_App
 {
     /// <summary>
-    /// Логика взаимодействия для AddShopPage.xaml
+    /// Логика взаимодействия для EditProductPage.xaml
     /// </summary>
-    public partial class AddShopPage : Page
+    public partial class EditProductPage : Page
     {
         Repository _repository;
-        public AddShopPage(Repository repository)
+        Product _product;
+        Shop _shop;
+
+        public EditProductPage(Repository repository, Product product, Shop shop)
         {
             InitializeComponent();
             _repository = repository;
+            _product = product;
+            _shop = shop;
+            textBoxName.Text = _product.Name;
+            textBoxDescription.Text = _product.Description;
+            categoryComboBox.ItemsSource = _shop.Categories;
         }
 
-        private void btnShopAdd_Click(object sender, RoutedEventArgs e)
+        private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
-            Shop newShop = new Shop(txtAdress.Text, txtName.Text);
-            _repository.AddShop(newShop);
+            _repository.EditProduct(_product, textBoxName.Text, textBoxDescription.Text);
             NavigationService.GoBack();
         }
     }

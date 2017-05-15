@@ -21,16 +21,18 @@ namespace sporting_goods_App
     public partial class CategoryPage : Page
     {
         Repository _repository;
-        public CategoryPage(Repository repository)
+        Shop _shop;
+        public CategoryPage(Repository repository, Shop shop)
         {
             InitializeComponent();
             _repository = repository;
+            _shop = shop;
         }
 
         private void buttonAdd_Click(object sender, RoutedEventArgs e)
         {
             Category newCategory = new Category(textBoxName.Text);
-            _repository.AddCategory(newCategory);
+            _repository.AddCategory(newCategory, _shop);
             NavigationService.GoBack();
         }
     }

@@ -16,20 +16,12 @@ namespace sporting_goods_App
             set { _name = value; }
         }
 
-        private List<Category> _categories;
+        private List<Category> _categories = new List<Category>();
 
         public List<Category> Categories
         {
             get { return _categories; }
             set { _categories = value; }
-        }
-
-        private List<Product> _products;
-
-        public List<Product> Products
-        {
-            get { return _products; }
-            set { _products = value; }
         }
 
         private string _address;
@@ -39,6 +31,7 @@ namespace sporting_goods_App
             get { return _address; }
             set { _address = value; }
         }
+
         public Shop() { }
 
         public Shop( string address, string name)

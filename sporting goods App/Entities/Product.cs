@@ -31,13 +31,13 @@ namespace sporting_goods_App
             get { return _category; }
             set { _category = value; }
         }
+
         public Product () { }
 
-        public Product(string name, string description, Category category)
+        public Product(string name, string description)
         {
             Name = name;
             Description = description;
-            Category = category;
         }
     }
 }

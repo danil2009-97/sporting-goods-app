@@ -21,19 +21,21 @@ namespace sporting_goods_App
     public partial class ProductPage : Page
     {
         Repository _repository;
-        public ProductPage(Repository repository)
+        Shop _shop;
+        public ProductPage(Repository repository, Shop shop)
         {
             InitializeComponent();
             _repository = repository;
-            categoryComboBox.ItemsSource = _repository.Categories;
+            _shop = shop;
+            categoryComboBox.ItemsSource = _shop.Categories;
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            if(categoryComboBox.SelectedItem is Category && categoryComboBox.SelectedItem != null)
+            if (categoryComboBox.SelectedItem is Category && categoryComboBox.SelectedItem != null)
             {
-                Product newProduct = new Product(textBoxName.Text, textBoxDescription.Text, categoryComboBox.SelectedItem as Category);
-                _repository.AddProduct(newProduct);
+                Product newProduct = new Product(textBoxName.Text, textBoxDescription.Text);
+                _repository.AddProduct(newProduct, categoryComboBox.SelectedItem as Category);
                 NavigationService.GoBack();
             }
         }
