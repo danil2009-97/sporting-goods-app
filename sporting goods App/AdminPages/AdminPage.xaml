@@ -30,7 +30,7 @@
                     </LinearGradientBrush>
                 </Button.Background>
                 <Button.ToolTip>
-                    <ToolTip>Вернутьс</ToolTip>
+                    <ToolTip>Вернуться назад</ToolTip>
                 </Button.ToolTip>
                 <Image  Source="/Images/Return.png"/>
             </Button>
