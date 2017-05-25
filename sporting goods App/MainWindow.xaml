@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:sporting_goods_App"
         mc:Ignorable="d"
-        Title="Спортивные товары" Height="410" MinHeight="410" MinWidth="525" Width="525">
+        Background="LightBlue"
+        Icon="Images/Icon.png"
+        Title="Спортивные товары" Height="450" MinHeight="450" MinWidth="560" Width="560">
     <Grid>
-        <Frame Name="windowContent"/>
+        <Frame Name="windowContent" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

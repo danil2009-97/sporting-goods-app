@@ -1,0 +1,25 @@
+﻿<Page x:Class="sporting_goods_App.GuestMainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:sporting_goods_App"
+      mc:Ignorable="d" 
+      d:DesignHeight="350" d:DesignWidth="525"
+      Title="Спортивные товары">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="6*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <TextBox Name="txtGuestCategoryFound" VerticalAlignment="Center" Foreground="Gray" TextWrapping="Wrap" Margin="8" Text="Введите категорию"  FontSize="16" GotFocus="txtGuestCategoryFound_GotFocus" LostFocus="txtGuestCategoryFound_LostFocus" TextChanged="txtGuestCategoryFound_TextChanged"  />
+        <TextBox Name="txtGuestProductFound" VerticalAlignment="Center" Grid.Column="1" Foreground="Gray" TextWrapping="Wrap" Margin="8" Text="Введите продукт" FontSize="16" TextChanged="txtGuestProductFound_TextChanged" GotFocus="txtGuestProductFound_GotFocus" LostFocus="txtGuestProductFound_LostFocus" />
+        <ListBox Name="CategoryList" Grid.Row="1" Margin="5 10" DisplayMemberPath="Name" FontSize="16" SelectionChanged="CategoryList_SelectionChanged"   />
+        <ListBox Name="ProductList" Grid.Row="1" Grid.Column="1"  Margin="5 10" DisplayMemberPath="Name" FontSize="16" MouseDoubleClick="ProductList_MouseDoubleClick"  />
+    </Grid>
+</Page>

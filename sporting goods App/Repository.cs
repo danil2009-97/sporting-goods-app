@@ -4,14 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
-using System.Xml.Serialization;
+using Newtonsoft.Json;
+
 
 namespace sporting_goods_App
 {
     public class Repository
     {
         Logger _logger = new Logger();
-        private const string _xmlFileName = "../../Archive/Data.xml";
+        private const string _jsonFilename = "../../Archive/Data.json";
 
         public event Action<Category> CategoryAdded;
         public event Action<Product> ProductAdded;
@@ -22,6 +23,7 @@ namespace sporting_goods_App
         public List<Shop> Shops
         {
             get { return _shops; }
+            set { _shops = value; }
         }
 
         public Repository()
@@ -79,6 +81,7 @@ namespace sporting_goods_App
                 throw new Exception("Такой магазин уже существует!");
             _shops.Add(shop);
             ShopAdded?.Invoke(shop);
+            _logger.Log($"Добавлен новый магазин {shop.Name}");
             SaveData();
         }
 
@@ -120,23 +123,16 @@ namespace sporting_goods_App
 
         private void SaveData()
         {
-            File.Delete(_xmlFileName);
-            using (FileStream fs = new FileStream(_xmlFileName, FileMode.OpenOrCreate))
-            {
-                XmlSerializer serializer = new XmlSerializer(typeof(List<Shop>));
-                serializer.Serialize(fs, Shops);
-            }
+            File.Delete(_jsonFilename);
+            File.WriteAllText(_jsonFilename, JsonConvert.SerializeObject(Shops));
         }
 
         private void LoadData()
         {
-            if (File.Exists(_xmlFileName))
+            if (File.Exists(_jsonFilename))
             {
-                using (FileStream fs = new FileStream(_xmlFileName, FileMode.Open))
-                {
-                    XmlSerializer serializer = new XmlSerializer(typeof(List<Shop>));
-                    _shops = (List<Shop>)serializer.Deserialize(fs);
-                }
+                string json = File.ReadAllText(_jsonFilename);
+                Shops = JsonConvert.DeserializeObject<List<Shop>>(json);
             }
         }
     }

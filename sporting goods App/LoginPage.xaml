@@ -7,13 +7,13 @@
       mc:Ignorable="d" 
       d:DesignHeight="350" d:DesignWidth="525"
       Background="White"
-      Title="LoginPage">
+      Title="Страница авторизации">
 
     <Grid >
         <Grid.RowDefinitions>
             <RowDefinition />
             <RowDefinition />
-            <RowDefinition />
+            <RowDefinition Height="0.5*" />
         </Grid.RowDefinitions>
         
         <Grid.ColumnDefinitions>
@@ -21,11 +21,11 @@
             <ColumnDefinition />
             
         </Grid.ColumnDefinitions>
-        <TextBlock FontSize="16" HorizontalAlignment="Right" Margin="10 0" VerticalAlignment="Center">Введите логин:</TextBlock>
-        <TextBox Name="textBoxLogin" Grid.Column="1" FontSize="16" Width="200" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0" TextWrapping="Wrap" ></TextBox>
-        <TextBlock Grid.Row="1" HorizontalAlignment="Right" Margin="10 0" VerticalAlignment="Center" FontSize="16">Введите пароль:</TextBlock>
-        <PasswordBox Name="passwordBox" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" Width="200" FontSize="16" Margin="10 0" ></PasswordBox>
-        <Button Name="buttonLogin" Grid.Row="2" Grid.ColumnSpan="2" VerticalAlignment="Top" Padding="4" Margin="20" HorizontalAlignment="Center" FontSize="16" Click="buttonLogin_Click">Войти как администратор</Button>
-        <Button Name="buttonGuest" Grid.Row="2"  Grid.ColumnSpan="2" VerticalAlignment="Bottom" HorizontalAlignment="Center" Padding="4" FontSize="16" Margin="10 5" Click="buttonGuest_Click">Войти как гость</Button>
+        <TextBlock FontSize="16" HorizontalAlignment="Right" Margin="10 " VerticalAlignment="Bottom">Введите логин:</TextBlock>
+        <TextBox Name="textBoxLogin" Grid.Column="1" FontSize="16" Width="200" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10 " TextWrapping="Wrap" ></TextBox>
+        <TextBlock Grid.Row="1" HorizontalAlignment="Right" Margin="10" VerticalAlignment="Top" FontSize="16">Введите пароль:</TextBlock>
+        <PasswordBox Name="passwordBox" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" Width="200" FontSize="16" Margin="10 " ></PasswordBox>
+        <Button Name="buttonLogin" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Center" Padding="4"  HorizontalAlignment="Center" FontSize="16" Click="buttonLogin_Click">Войти как администратор</Button>
+        <Button Name="buttonGuest" Grid.Row="1"  Grid.ColumnSpan="2" Width="200" VerticalAlignment="Bottom" HorizontalAlignment="Center" Padding="4" FontSize="16" Margin="15" Click="buttonGuest_Click">Войти как гость</Button>
     </Grid>
 </Page>

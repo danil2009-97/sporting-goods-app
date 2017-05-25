@@ -1,0 +1,18 @@
+﻿<Page x:Class="sporting_goods_App.GuestProductPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:sporting_goods_App"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="560"
+      Title="Страница продукта">
+
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Image Height="150" Source="/Images/Product.png"/>
+            <Label Name="labelName" FontSize="20" FontWeight="DemiBold" HorizontalAlignment="Center">Имя продукта</Label>
+            <Label Name="labelDescription" FontSize="16"  HorizontalAlignment="Center">Описание</Label>
+        </StackPanel>
+    </Grid>
+</Page>

@@ -24,13 +24,6 @@ namespace sporting_goods_App
             set { _description = value; }
         }
 
-        private Category _category;
-
-        public Category Category
-        {
-            get { return _category; }
-            set { _category = value; }
-        }
 
         public Product () { }
 

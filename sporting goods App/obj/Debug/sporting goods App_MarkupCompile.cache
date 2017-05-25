@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\User\Desktop\предметы\прога\Ефремов\КДЗ\sporting goods App\sporting goods App\App.xaml
-91789396159
+142075700844
 
-181281494422
-13738642453
-AddShopPage.xaml;CategoryEditPage.xaml;CategoryPage.xaml;EditProductPage.xaml;LoginPage.xaml;MainPage.xaml;MainWindow.xaml;ProductPage.xaml;ShopPage.xaml;
+231356356565
+141884576695
+AdminPages\AdminPage.xaml;AdminPages\AddShopPage.xaml;AdminPages\CategoryEditPage.xaml;AdminPages\CategoryPage.xaml;AdminPages\EditProductPage.xaml;GuestPages\GuestPage.xaml;GuestPages\GuestMainPage.xaml;GuestPages\GuestShopPage.xaml;GuestPages\GuestProductPage.xaml;LoginPage.xaml;AdminPages\MainPage.xaml;MainWindow.xaml;AdminPages\ProductPage.xaml;AdminPages\ShopPage.xaml;
 
 False
 

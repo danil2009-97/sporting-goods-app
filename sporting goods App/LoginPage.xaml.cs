@@ -39,15 +39,15 @@ namespace sporting_goods_App
         {
             string[] lines = File.ReadAllLines("../../Archive/Login.txt");
 
-            //if (textBoxLogin.Text == lines[0] && CalculateHash(passwordBox.Password) == lines[1])
-            NavigationService.Navigate(new ShopPage());
-            //else
-            //MessageBox.Show("Неправильно введен логин/пароль");
+            if (textBoxLogin.Text == lines[0] && CalculateHash(passwordBox.Password) == lines[1])
+            NavigationService.Navigate(new AdminPage());
+            else
+            MessageBox.Show("Неправильно введен логин/пароль");
         }
 
         private void buttonGuest_Click(object sender, RoutedEventArgs e)
         {
-            // NavigationService.Navigate(new ShopPage(false));
+            NavigationService.Navigate(new GuestPage());
         }
     }
 }
